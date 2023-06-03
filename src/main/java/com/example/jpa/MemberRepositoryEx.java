@@ -7,16 +7,16 @@ import org.springframework.transaction.annotation.Transactional;
 
 @Repository
 @Transactional
-public class MemberRepository {
+public class MemberRepositoryEx {
     @PersistenceContext
     private EntityManager em;
 
-    public Long save(Member member) {
+    public Long save(MemberEx member) {
         em.persist(member);
         return member.getId();
     }
 
-    public Member find(Long id) {
-        return em.find(Member.class, id);
+    public MemberEx find(Long id) {
+        return em.find(MemberEx.class, id);
     }
 }
